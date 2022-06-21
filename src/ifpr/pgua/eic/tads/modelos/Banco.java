@@ -8,6 +8,7 @@ public class Banco {
     private Pessoa[] pessoas;
     private ContaCorrente[] contaCorrentes;
     private int qtdePessoas;
+    private int qtdeContas;
   
 
     public Banco(String nome, String telefone, String cnpj) {
@@ -16,6 +17,7 @@ public class Banco {
         this.cnpj = cnpj;
         pessoas = new Pessoa[5];
         qtdePessoas = 0;
+        qtdeContas = 0;
         contaCorrentes = new ContaCorrente[5];
 
     }
@@ -24,6 +26,11 @@ public class Banco {
     public void cadastrarPessoa(Pessoa pessoa){
         this.pessoas[qtdePessoas] = pessoa;
         qtdePessoas += 1;
+    }
+
+    public void cadastrarConta(ContaCorrente conta){
+        this.contaCorrentes[qtdeContas] = conta;
+        qtdeContas += 1;
     }
 
     public Pessoa[] getPessoas(){
